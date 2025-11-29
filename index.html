@@ -48,106 +48,186 @@
 
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <main class="container mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
         
-        <!-- Header & Filters -->
-        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
-            <h1 class="text-3xl font-bold tracking-tight">New Arrivals</h1>
-            
-            <div class="flex gap-3 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
-                <button class="px-6 py-2.5 bg-gray-900 text-white rounded-full text-sm font-medium transition-transform hover:scale-105">All</button>
-                <button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full text-sm font-medium hover:border-gray-400 transition-colors">T-Shirts</button>
-                <button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full text-sm font-medium hover:border-gray-400 transition-colors">Hoodies</button>
-                <button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full text-sm font-medium hover:border-gray-400 transition-colors">Tote Bags</button>
-            </div>
-        </div>
-
-        <!-- Product Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <!-- Product Card 1 -->
-            <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="aspect-[4/5] wf-image rounded-xl mb-4 relative overflow-hidden">
-                    <span class="text-sm font-medium">Image Placeholder</span>
-                    <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div class="space-y-2">
-                    <div class="flex justify-between items-start">
-                        <h3 class="font-bold text-lg leading-tight">เสื้อยืด Minimal Cotton</h3>
-                        <span class="font-bold text-gray-900">฿890</span>
-                    </div>
-                    <p class="text-sm text-gray-500 line-clamp-1">100% Organic Cotton, Breathable</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">T-Shirt</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Summer</span>
-                    </div>
-                    <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
-                        Customize Design
-                    </a>
-                </div>
+        <!-- Sidebar Navigation -->
+        <aside class="w-full lg:w-64 flex-shrink-0 space-y-8 hidden lg:block">
+            <!-- Top Links -->
+            <div class="space-y-3">
+                <a href="#" class="block font-bold text-gray-900 hover:text-blue-600">Special offers</a>
+                <a href="#" class="block font-bold text-gray-900 hover:text-blue-600">New products</a>
+                <a href="#" class="block font-bold text-gray-900 hover:text-blue-600">Bestsellers</a>
+                <a href="#" class="block font-bold text-gray-900 hover:text-blue-600">Eco-friendly</a>
             </div>
 
-            <!-- Product Card 2 -->
-            <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="aspect-[4/5] wf-image rounded-xl mb-4">
-                    <span class="text-sm font-medium">Image Placeholder</span>
-                </div>
-                <div class="space-y-2">
-                    <div class="flex justify-between items-start">
-                        <h3 class="font-bold text-lg leading-tight">เสื้อฮู้ด Streetwear</h3>
-                        <span class="font-bold text-gray-900">฿1,590</span>
-                    </div>
-                    <p class="text-sm text-gray-500 line-clamp-1">Heavyweight fleece for winter</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Hoodie</span>
-                    </div>
-                    <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
-                        Customize Design
-                    </a>
-                </div>
-            </div>
+            <hr class="border-gray-200">
 
-            <!-- Product Card 3 -->
-            <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="aspect-[4/5] wf-image rounded-xl mb-4">
-                    <span class="text-sm font-medium">Image Placeholder</span>
-                </div>
-                <div class="space-y-2">
-                    <div class="flex justify-between items-start">
-                        <h3 class="font-bold text-lg leading-tight">กระเป๋าผ้า Canvas รักษ์โลก</h3>
-                        <span class="font-bold text-gray-900">฿490</span>
+            <!-- Categories -->
+            <div class="space-y-2">
+                <h3 class="font-bold text-lg mb-4">All products</h3>
+                
+                <!-- Accordion Item 1 -->
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none py-2 hover:text-blue-600">
+                        <span>Men's clothing</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 mt-2 ml-4 space-y-2 text-sm">
+                        <a href="#" class="block hover:text-gray-900">T-Shirts</a>
+                        <a href="#" class="block hover:text-gray-900">Hoodies</a>
+                        <a href="#" class="block hover:text-gray-900">Jackets</a>
                     </div>
-                    <p class="text-sm text-gray-500 line-clamp-1">Durable canvas material</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Bag</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Eco</span>
-                    </div>
-                    <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
-                        Customize Design
-                    </a>
-                </div>
-            </div>
+                </details>
 
-            <!-- Product Card 4 -->
-            <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <div class="aspect-[4/5] wf-image rounded-xl mb-4">
-                    <span class="text-sm font-medium">Image Placeholder</span>
-                </div>
-                <div class="space-y-2">
-                    <div class="flex justify-between items-start">
-                        <h3 class="font-bold text-lg leading-tight">เสื้อยืดลาย Vintage</h3>
-                        <span class="font-bold text-gray-900">฿990</span>
+                <!-- Accordion Item 2 -->
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none py-2 hover:text-blue-600">
+                        <span>Women's clothing</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 mt-2 ml-4 space-y-2 text-sm">
+                        <a href="#" class="block hover:text-gray-900">T-Shirts</a>
+                        <a href="#" class="block hover:text-gray-900">Dresses</a>
+                        <a href="#" class="block hover:text-gray-900">Skirts</a>
                     </div>
-                    <p class="text-sm text-gray-500 line-clamp-1">Retro style with soft feel</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">T-Shirt</span>
+                </details>
+
+                <!-- Accordion Item 3 -->
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none py-2 hover:text-blue-600">
+                        <span>Kids' & youth clothing</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 mt-2 ml-4 space-y-2 text-sm">
+                        <a href="#" class="block hover:text-gray-900">T-Shirts</a>
+                        <a href="#" class="block hover:text-gray-900">Baby Bibs</a>
                     </div>
-                    <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
-                        Customize Design
-                    </a>
+                </details>
+
+                <!-- Accordion Item 4 -->
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none py-2 hover:text-blue-600">
+                        <span>Accessories</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-500 mt-2 ml-4 space-y-2 text-sm">
+                        <a href="#" class="block hover:text-gray-900">Tote Bags</a>
+                        <a href="#" class="block hover:text-gray-900">Phone Cases</a>
+                        <a href="#" class="block hover:text-gray-900">Hats</a>
+                    </div>
+                </details>
+            </div>
+        </aside>
+
+        <!-- Product Section -->
+        <div class="flex-grow">
+            <!-- Header & Filters -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
+                <h1 class="text-3xl font-bold tracking-tight">New Arrivals</h1>
+                
+                <div class="flex gap-3 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
+                    <button class="px-6 py-2.5 bg-gray-900 text-white rounded-full text-sm font-medium transition-transform hover:scale-105">All</button>
+                    <button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full text-sm font-medium hover:border-gray-400 transition-colors">T-Shirts</button>
+                    <button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full text-sm font-medium hover:border-gray-400 transition-colors">Hoodies</button>
+                    <button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full text-sm font-medium hover:border-gray-400 transition-colors">Tote Bags</button>
                 </div>
             </div>
 
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[4/5] wf-image rounded-xl mb-4 relative overflow-hidden">
+                        <span class="text-sm font-medium">Image Placeholder</span>
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-lg leading-tight">เสื้อยืด Minimal Cotton</h3>
+                            <span class="font-bold text-gray-900">฿890</span>
+                        </div>
+                        <p class="text-sm text-gray-500 line-clamp-1">100% Organic Cotton, Breathable</p>
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">T-Shirt</span>
+                            <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Summer</span>
+                        </div>
+                        <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
+                            Customize Design
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[4/5] wf-image rounded-xl mb-4">
+                        <span class="text-sm font-medium">Image Placeholder</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-lg leading-tight">เสื้อฮู้ด Streetwear</h3>
+                            <span class="font-bold text-gray-900">฿1,590</span>
+                        </div>
+                        <p class="text-sm text-gray-500 line-clamp-1">Heavyweight fleece for winter</p>
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Hoodie</span>
+                        </div>
+                        <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
+                            Customize Design
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[4/5] wf-image rounded-xl mb-4">
+                        <span class="text-sm font-medium">Image Placeholder</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-lg leading-tight">กระเป๋าผ้า Canvas รักษ์โลก</h3>
+                            <span class="font-bold text-gray-900">฿490</span>
+                        </div>
+                        <p class="text-sm text-gray-500 line-clamp-1">Durable canvas material</p>
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Bag</span>
+                            <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">Eco</span>
+                        </div>
+                        <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
+                            Customize Design
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="group bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[4/5] wf-image rounded-xl mb-4">
+                        <span class="text-sm font-medium">Image Placeholder</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-lg leading-tight">เสื้อยืดลาย Vintage</h3>
+                            <span class="font-bold text-gray-900">฿990</span>
+                        </div>
+                        <p class="text-sm text-gray-500 line-clamp-1">Retro style with soft feel</p>
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">T-Shirt</span>
+                        </div>
+                        <a href="customization.html" class="block w-full mt-4 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-xl font-bold text-center text-sm hover:bg-gray-900 hover:text-white transition-colors">
+                            Customize Design
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
 

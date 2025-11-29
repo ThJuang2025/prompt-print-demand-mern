@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col items-center justify-center p-6">
+
+    <div class="max-w-md w-full bg-white rounded-3xl border border-gray-200 shadow-xl p-8 md:p-10">
+        
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Create Account</h1>
+            <p class="text-gray-500">Join us to start designing.</p>
+        </div>
+
+        <form class="space-y-5">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">First Name</label>
+                    <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Last Name</label>
+                    <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Email</label>
+                <input type="email" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Password</label>
+                <input type="password" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Confirm Password</label>
+                <input type="password" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none">
+            </div>
+
+            <button class="w-full py-4 bg-gray-900 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-gray-800 transition-transform hover:scale-[1.02]">
+                Sign Up
+            </button>
+        </form>
+
+        <div class="mt-8 text-center">
+            <p class="text-gray-500">Already have an account? <a href="login.html" class="font-bold text-gray-900 hover:underline">Log in</a></p>
+        </div>
+
+    </div>
+
+</body>
+</html>

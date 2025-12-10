@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-gray-900', 'text-white');
+                el.classList.add('bg-white', 'text-gray-600', 'hover:bg-gray-100');
+            });
+            document.getElementById('btn-' + tabId).classList.remove('bg-white', 'text-gray-600', 'hover:bg-gray-100');
+            document.getElementById('btn-' + tabId).classList.add('bg-gray-900', 'text-white');
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <a href="index.html" class="font-bold text-xl tracking-tight flex items-center gap-2">
+            <img src="images/logo.jpg" alt="Logo" class="w-8 h-8 rounded-lg object-cover">
+            <span>Commit and Chill Shop</span>
+        </a>
+        <div class="flex items-center gap-4">
+            <span class="font-bold">John Doe</span>
+            <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <h1 class="text-3xl font-bold mb-8">My Account</h1>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <!-- Sidebar / Tabs -->
+            <div class="w-full md:w-64 flex-shrink-0 space-y-2">
+                <button id="btn-profile" onclick="showTab('profile')" class="tab-btn w-full text-left px-6 py-3 rounded-xl font-bold bg-gray-900 text-white shadow-sm transition-colors">Profile</button>
+                <button id="btn-orders" onclick="showTab('orders')" class="tab-btn w-full text-left px-6 py-3 rounded-xl font-bold bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-colors">Order History</button>
+                <button id="btn-dashboard" onclick="showTab('dashboard')" class="tab-btn w-full text-left px-6 py-3 rounded-xl font-bold bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-colors">Dashboard</button>
+                <button class="w-full text-left px-6 py-3 rounded-xl font-bold text-red-500 hover:bg-red-50 transition-colors mt-8">Log Out</button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex-grow">
+                
+                <!-- Profile Tab -->
+                <div id="profile" class="tab-content bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
+                    <h2 class="text-xl font-bold mb-6">Profile Information</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">First Name</label>
+                            <input type="text" value="John" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Last Name</label>
+                            <input type="text" value="Doe" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3" readonly>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Email</label>
+                            <input type="email" value="john.doe@example.com" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3" readonly>
+                        </div>
+                    </div>
+                    <button class="mt-6 px-6 py-3 border border-gray-300 rounded-xl font-bold hover:bg-gray-50">Edit Profile</button>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="orders" class="tab-content hidden bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
+                    <h2 class="text-xl font-bold mb-6">Order History</h2>
+                    <div class="space-y-4">
+                        <!-- Order Item -->
+                        <div class="border border-gray-100 rounded-xl p-4 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <div>
+                                <p class="font-bold">#ORD-8832</p>
+                                <p class="text-sm text-gray-500">Nov 29, 2024</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold">฿1,530</p>
+                                <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded">Processing</span>
+                            </div>
+                        </div>
+                        <!-- Order Item -->
+                        <div class="border border-gray-100 rounded-xl p-4 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <div>
+                                <p class="font-bold">#ORD-8100</p>
+                                <p class="text-sm text-gray-500">Oct 15, 2024</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold">฿4,500</p>
+                                <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-bold rounded">Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-content hidden bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
+                    <h2 class="text-xl font-bold mb-6">Activity Overview</h2>
+                    <div class="h-64 bg-gray-50 rounded-2xl flex items-end justify-around p-6 border border-gray-100">
+                        <!-- Bar Chart -->
+                        <div class="w-12 bg-gray-200 h-1/4 rounded-t-lg relative group">
+                            <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">2</div>
+                        </div>
+                        <div class="w-12 bg-gray-200 h-1/2 rounded-t-lg relative group">
+                            <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">4</div>
+                        </div>
+                        <div class="w-12 bg-gray-900 h-3/4 rounded-t-lg relative group">
+                            <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">6</div>
+                        </div>
+                        <div class="w-12 bg-gray-200 h-1/3 rounded-t-lg relative group">
+                             <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">3</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-around mt-4 text-xs font-bold text-gray-400 uppercase">
+                        <span>Jul</span>
+                        <span>Aug</span>
+                        <span>Sep</span>
+                        <span>Oct</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

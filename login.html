@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col items-center justify-center p-6">
+
+    <div class="max-w-md w-full bg-white rounded-3xl border border-gray-200 shadow-xl p-8 md:p-10">
+        
+        <!-- Demo Credentials -->
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 text-sm text-blue-800">
+            <p class="font-bold mb-2">🧪 Test Credentials:</p>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <span class="font-bold block text-xs uppercase text-blue-500">Customer</span>
+                    <code class="bg-white px-1 rounded">customer@ai-store.com</code>
+                    <code class="bg-white px-1 rounded block mt-1 w-fit">user123</code>
+                </div>
+                <div>
+                    <span class="font-bold block text-xs uppercase text-blue-500">Admin</span>
+                    <code class="bg-white px-1 rounded">admin@ai-store.com</code>
+                    <code class="bg-white px-1 rounded block mt-1 w-fit">admin123</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Welcome Back</h1>
+            <p class="text-gray-500">Please enter your details to sign in.</p>
+        </div>
+
+        <form class="space-y-6" onsubmit="handleLogin(event)">
+            <div>
+                <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Email</label>
+                <input type="email" id="email" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none transition-all" required>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-2 text-gray-500 uppercase">Password</label>
+                <input type="password" id="password" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-gray-900 outline-none transition-all" required>
+                <div class="text-right mt-2">
+                    <a href="forgot-password.html" class="text-sm font-medium text-gray-500 hover:text-gray-900">Forgot Password?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-gray-900 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-gray-800 transition-transform hover:scale-[1.02]">
+                Sign In
+            </button>
+        </form>
+
+        <script>
+            function handleLogin(event) {
+                event.preventDefault();
+                const email = document.getElementById('email').value;
+                
+                if (email === 'admin@ai-store.com') {
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    window.location.href = 'user-dashboard.html';
+                }
+            }
+        </script>
+
+        <div class="mt-8 text-center">
+            <p class="text-gray-500">Don't have an account? <a href="register.html" class="font-bold text-gray-900 hover:underline">Create account</a></p>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-100 text-center">
+            <a href="index.html" class="text-sm text-gray-400 hover:text-gray-600">← Back to Store</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
